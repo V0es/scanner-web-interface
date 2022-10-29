@@ -10,40 +10,41 @@
 <body>
     <div class="wrapper">
         <div class="container">
-            <div class="window">
+            <div class="window fdc">
                 
-                <form action="" method="post" class="scan-form" id="main-form">
-                  <div class="scan-form flex">
-                    <div class="description">Сканнер</div>
-                    <select form="main-form">
-                      <option name="scan" id="scan">HP Laser Jet</option>
-                    </select>
-                  </div>
+                <form action="" method="post" class="main-form fdc" id="main-form">
+                    <div class="scan-form flex">
+                        <div class="description">Сканнер</div>
+                            <select class="input select" form="main-form">
+                                <option name="scan" id="scan">HP Laser Jet</option>
+                            </select>
+                    </div>
 
-                  <div class="scan-form">
-                  <label class="description" for="name">Имя файла</label>
-                    <input type="text" name="name" id="name" required>
-                  </div>
+                    <div class="scan-form">
+                        <label class="description" for="name">Имя файла</label>
+                        <input class="input" type="text" name="name" id="name" required>
+                    </div>
+
                     <div class="scan-form flex">
                         <div class="description">Разрешение(DPI)</div>
-                        <select form="main-form">
-                            <option>150</option>
-                            <option>200</option>
-                        </select>
+                            <select class="input select" form="main-form">
+                                <option>150</option>
+                                <option>200</option>
+                            </select>
                     </div>
+
                     <div class="scan-form flex">
                         <div class="description">Формат файла</div>
-                        <select form="main-form">
+                        <select class="input select" form="main-form">
                             <option>.png</option>
                             <option>.jpeg</option>
                         </select>
+                    </div>
 
+                    <div class="scan-form submit">
+                      <input class="input btn" type="submit" value="Сканировать">
                     </div>
-                    <div class="scan-form">
-                      <input type="submit" value="Сканировать">
-                    </div>
-                  </form>
-                  
+                </form>  
             </div>
         </div>
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href='index.css'>
+    <link rel="stylesheet" href='static/index.css'>
     <title>Scanner</title>
 </head>
 <body>
@@ -13,23 +13,40 @@
             <div class="window">
                 
                 <form action="" method="post" class="scan-form" id="main-form">
-                    <select form="main-form"></select>
-                    <div class="scan-form">
-                      <label for="name">Имя файла </label>
-                      <input type="text" name="name" id="name" required>
+                  <div class="scan-form flex">
+                    <div class="description">Сканнер</div>
+                    <select form="main-form">
+                      <option name="scan" id="scan">HP Laser Jet</option>
+                    </select>
+                  </div>
+
+                  <div class="scan-form">
+                  <label class="description" for="name">Имя файла</label>
+                    <input type="text" name="name" id="name" required>
+                  </div>
+                    <div class="scan-form flex">
+                        <div class="description">Разрешение(DPI)</div>
+                        <select form="main-form">
+                            <option>150</option>
+                            <option>200</option>
+                        </select>
+                    </div>
+                    <div class="scan-form flex">
+                        <div class="description">Формат файла</div>
+                        <select form="main-form">
+                            <option>.png</option>
+                            <option>.jpeg</option>
+                        </select>
+
                     </div>
                     <div class="scan-form">
-                      
-                    </div>
-                    <div class="scan-form">
-                      <input type="submit" value="Subscribe!">
+                      <input type="submit" value="Сканировать">
                     </div>
                   </form>
                   
             </div>
         </div>
 
-    </div>
-    
-</body>
+    </div>  
+  </body>
 </html>

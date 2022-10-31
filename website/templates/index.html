@@ -28,8 +28,9 @@
                     <div class="scan-form flex">
                         <div class="description">Разрешение(DPI)</div>
                             <select class="input select" form="main-form">
-                                <option>150</option>
-                                <option>200</option>
+                                {% for dpi in dpis  %}
+                                    <option>{{ dpi }}</option>
+                                {% endfor %}
                             </select>
                     </div>
 

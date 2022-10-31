@@ -16,7 +16,7 @@ def parse_device_message(message : str) -> List[str]:
 
 
 def parse_message(message):
-    
+    pass
 
-message = subprocess.getoutput(f'sane-find-scanner')
-print(parse_device_message(message))
+#message = subprocess.getoutput(f'sane-find-scanner')
+#print(parse_device_message(message))

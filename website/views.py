@@ -1,5 +1,5 @@
 from website import app
-import backend
+from website.backend.backend import get_scanner_list
 
 
 
@@ -11,9 +11,9 @@ from flask import render_template, request
 def index():
 
     
-    if request.method == 'post':
+    if request.method == 'POST':
         pass
-    if request.method == 'get':
-        pass
-
+    if request.method == 'GET':
+        scanner_list = get_scanner_list()
+        return render_template('index.html', dpis=[150, 200, 300])
     return render_template('index.html')

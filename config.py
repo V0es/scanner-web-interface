@@ -1,8 +1,11 @@
 from typing import List
 import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
 class FlaskConfiguration(object):
-    DEBUG = True
+    DEBUG = False
      
 class SaneCommand():
 
@@ -23,5 +26,6 @@ class SaneCommand():
 
 file_extensions = ['jpeg', 'png', 'tiff']
 
-host = os.getenv('HOST')
-port = os.getenv('PORT')
+host = os.getenv("HOST")
+port = os.getenv("PORT")
+print(host, port)

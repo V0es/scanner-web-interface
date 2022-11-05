@@ -16,5 +16,9 @@ def get_scanner_list() -> Dict:
         device_name = ''.join(re.findall(r'\/(\w+)\?', message))
         device_id = ''.join(re.findall(r'\`(.*)\'', message))
         scanners[device_name] = Scanner(device_name, device_id)
+        if len(scanners) == 0:
+            logging.debug('No scanners found')
+        else:
+            logging.debug(f'Found scanners {scanners.items()}')
     return scanners
 

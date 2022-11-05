@@ -1,4 +1,5 @@
 from typing import List
+import os
 
 class FlaskConfiguration(object):
     DEBUG = True
@@ -21,3 +22,6 @@ class SaneCommand():
         return ['-L']
 
 file_extensions = ['jpeg', 'png', 'tiff']
+
+host = os.getenv('HOST')
+port = os.getenv('PORT')

@@ -16,8 +16,11 @@
                     <div class="scan-form flex">
                         <div class="description">Сканнер</div>
                             <select class="input select" form="main-form">
-                                <option name="scan" id="scan">HP Laser Jet</option>
+                                {% for scanner, x in scanners.items() %}
+                                    <option name="scan" id="scan">{{ scanner }}</option>
+                                {% endfor %} 
                             </select>
+
                     </div>
 
                     <div class="scan-form">
@@ -28,7 +31,7 @@
                     <div class="scan-form flex">
                         <div class="description">Разрешение(DPI)</div>
                             <select class="input select" form="main-form">
-                                {% for dpi in dpis  %}
+                                {% for dpi in dpis %}
                                     <option>{{ dpi }}</option>
                                 {% endfor %}
                             </select>
@@ -37,8 +40,9 @@
                     <div class="scan-form flex">
                         <div class="description">Формат файла</div>
                         <select class="input select" form="main-form">
-                            <option>.png</option>
-                            <option>.jpeg</option>
+                            {% for extension in extensions %}
+                                <option> {{ extension }} </option>
+                            {% endfor %}
                         </select>
                     </div>
 

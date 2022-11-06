@@ -4,6 +4,18 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+host = os.getenv("HOST")
+port = os.getenv("PORT")
+shell_arg = os.getenv("SHELL")
+
+
+if shell_arg == 'True':
+    shell_arg = True
+elif shell_arg == 'False':
+    shell_arg = False
+else:
+    raise Exception('Shell argument is invalid')
+
 class FlaskConfiguration(object):
     DEBUG = False
      
@@ -26,6 +38,3 @@ class SaneCommand():
 
 file_extensions = ['jpeg', 'png', 'tiff']
 
-host = os.getenv("HOST")
-port = os.getenv("PORT")
-print(host, port)

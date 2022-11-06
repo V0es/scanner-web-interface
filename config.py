@@ -6,7 +6,7 @@ load_dotenv()
 
 host = os.getenv("HOST")
 port = os.getenv("PORT")
-shell_arg = os.getenv("SHELL")
+shell_arg = os.getenv("SHELL_ARG")
 
 
 if shell_arg == 'True':

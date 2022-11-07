@@ -29,7 +29,7 @@ class SaneCommand():
                     dpi : str, file_format : str) -> Dict[str, str]:
         flags = {
             '--device-name=' : device_id,
-            '--output-file=': f'imgs/{filename}.{file_format}',
+            '--output-file=': f'{img_folder}/{filename}.{file_format}',
         }
         return flags
 

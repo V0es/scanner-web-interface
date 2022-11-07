@@ -12,10 +12,10 @@
         <div class="container">
             <div class="window fdc">
                 
-                <form action="" method="post" class="main-form fdc" id="main-form">
+                <form action="{{ url_for('index') }}" method="post" class="main-form fdc" id="main-form">
                     <div class="scan-form flex">
                         <div class="description">Сканнер</div>
-                            <select class="input select" form="main-form">
+                            <select name="scan_select" class="input select" form="main-form">
                                 {% for scanner, x in scanners.items() %}
                                     <option name="scan" id="scan">{{ scanner }}</option>
                                 {% endfor %} 
@@ -25,23 +25,23 @@
 
                     <div class="scan-form">
                         <label class="description" for="name">Имя файла</label>
-                        <input class="input" type="text" name="name" id="name" required>
+                        <input class="input" type="text" name="filename" id="name" required>
                     </div>
 
                     <div class="scan-form flex">
                         <div class="description">Разрешение(DPI)</div>
-                            <select class="input select" form="main-form">
+                            <select name="dpi_select" class="input select" form="main-form">
                                 {% for dpi in dpis %}
-                                    <option>{{ dpi }}</option>
+                                    <option name="dpi">{{ dpi }}</option>
                                 {% endfor %}
                             </select>
                     </div>
 
                     <div class="scan-form flex">
                         <div class="description">Формат файла</div>
-                        <select class="input select" form="main-form">
+                        <select name="format_select" class="input select" form="main-form">
                             {% for extension in extensions %}
-                                <option> {{ extension }} </option>
+                                <option name="extension"> {{ extension }} </option>
                             {% endfor %}
                         </select>
                     </div>

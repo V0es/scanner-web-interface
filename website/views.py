@@ -1,5 +1,5 @@
 from website import app
-from website.backend.backend import get_scanner_list
+from website.backend.utils import get_scanner_list, start_scanning
 from config import file_extensions
 
 import logging
@@ -7,19 +7,16 @@ import logging
 
 from flask import render_template, request
 
-scanner_list = get_scanner_list()
-
 @app.route('/index', methods=['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
-    
+    scanner_list = get_scanner_list()
+
     if request.method == 'POST':
-        pass
+        start_scanning(request.form, scanner_list)
+        
     if request.method == 'GET':
-        logging.debug('Get method caught')
-        if len(scanner_list) == 0:
-            logging.debug('Scanner list is empty')
-            scanner_list = get_scanner_list()
+        logging.debug('Get method caught')    
         return render_template('index.html', scanners=scanner_list, extensions=file_extensions)
     return render_template('index.html')

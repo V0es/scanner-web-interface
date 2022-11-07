@@ -7,6 +7,7 @@ load_dotenv()
 host = os.getenv("HOST")
 port = os.getenv("PORT")
 shell_arg = os.getenv("SHELL_ARG")
+img_folder = os.getenv("IMG_FOLDER")
 
 
 if shell_arg == 'True':

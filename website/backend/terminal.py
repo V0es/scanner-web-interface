@@ -9,5 +9,9 @@ import logging
 def execute_command(command : str, flags : List) -> str:
     flags.insert(0, command)
     logging.debug('Executed command: ' + ' '.join(flags))
-    return subprocess.run(flags, stdout=subprocess.PIPE, check=True, text=True, shell=shell_arg).stdout
-
+    try:
+        stdout = subprocess.run(flags, stdout=subprocess.PIPE, check=True, text=True, shell=shell_arg).stdout
+    except subprocess.CalledProcessError() as e:
+        logging.debug('Got process error: ' + str(e))
+        
+    return stdout

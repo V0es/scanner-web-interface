@@ -11,7 +11,7 @@ class Scanner():
         
 
     def scan(self, filename : str, format : str, dpi : str):
-        scan_cmd = SaneCommand('scanimage')
+        scan_cmd = SaneCommand('hp-scan')
         scan_args = scan_cmd.scan_image_args(self.device_id, filename, dpi, format)
         arg_list = self._make_args_list(scan_args)
 

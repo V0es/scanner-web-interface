@@ -28,8 +28,11 @@ class SaneCommand():
     def scan_image_args(self, device_id : str, filename : str, 
                     dpi : str, file_format : str) -> Dict[str, str]:
         flags = {
-            '--device-name=' : device_id,
-            '--output-file=': f'{img_folder}/{filename}.{file_format}',
+            '--device=' : device_id,
+            '--file=': f'{img_folder}/{filename}.{file_format}',
+            '--resolution' : dpi,
+            '--mode=': 'gray',
+            '--logging=' : 'debug'
         }
         return flags
 
@@ -38,4 +41,5 @@ class SaneCommand():
         return ['-L']
 
 file_extensions = ['jpeg', 'png', 'tiff']
+dpis = ['100', '150', '200', '300', '600', '1200']
 

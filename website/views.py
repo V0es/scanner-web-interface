@@ -1,6 +1,6 @@
 from website import app
 from website.backend.utils import get_scanner_list, start_scanning
-from config import file_extensions
+from config import file_extensions, dpis
 
 import logging
 
@@ -18,5 +18,5 @@ def index():
         
     if request.method == 'GET':
         logging.debug('Get method caught')    
-        return render_template('index.html', scanners=scanner_list, extensions=file_extensions)
+        return render_template('index.html', scanners=scanner_list, extensions=file_extensions, dpis=dpis)
     return render_template('index.html')

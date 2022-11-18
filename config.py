@@ -30,7 +30,7 @@ class SaneCommand():
         flags = {
             '--device=' : device_id,
             '--file=': f'{img_folder}/{filename}.{file_format}',
-            '--resolution' : dpi,
+            '--resolution=' : dpi,
             '--mode=': 'gray',
             '--logging=' : 'debug'
         }

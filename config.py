@@ -40,6 +40,6 @@ class SaneCommand():
     def device_list_args() -> List[str]:
         return ['-L']
 
-file_extensions = ['jpeg', 'png', 'tiff']
+file_extensions = ['jpg', 'png', 'tiff']
 dpis = ['100', '150', '200', '300', '600', '1200']
 

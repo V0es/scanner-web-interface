@@ -16,7 +16,5 @@ def index():
     if request.method == 'POST':
         start_scanning(request.form, scanner_list)
         
-    if request.method == 'GET':
-        logging.debug('Get method caught')    
-        return render_template('index.html', scanners=scanner_list, extensions=file_extensions, dpis=dpis)
-    return render_template('index.html')
+          
+    return render_template('index.html', scanners=scanner_list, extensions=file_extensions, dpis=dpis)
